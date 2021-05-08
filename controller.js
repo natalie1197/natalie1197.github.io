@@ -70,7 +70,7 @@ $(async function() {
 
    let text = game1.quote;
 
-    $('.quote-Holder').append(`<blockquote>Random Joke:"${text}"</blockquote>`)
+    $('.quote-Holder').append(`<blockquote>Random Dad Joke: "${text}"</blockquote>`)
 
     $('.grid-container').append(game1.HTMLBoard);
     game1.imageArray.forEach(function(value, index) {
