@@ -3,57 +3,21 @@ import {nasaAPOD, quoteApi} from './api.js'
 
 
 export function game () {
-    this.quote ='',
-    this.board = new board();
+    this.quote ='';
+    this.board = new board(); 
+    this.boardArry = [...this.board.boardArry]
     this.HTMLBoard = this.makeHTMLBoard(this.board);
-    this.gameState ={
-        won: false,
-        score: 0,
-    }
-    this.swapObservers = [];
-    this.winObservers = [];
-    this.loseObservers = [];
+    this.score =0;
 }
 
 
 
 game.prototype.setBoard = function(board) {this.board = board;}
 game.prototype.setHTML = function(HTML) {this.HTMLBoard = HTML;}
-game.prototype.setgameState = function(gameState) {this.gameState = gameState;}
+game.prototype.setScore = function(score) {this.score = score;}
 game.prototype.getBoard = function() {return this.board;}
 game.prototype.getHTML = function() {return this.HTMLBoard}
-game.prototype.getGameState = function() {return this.gameState;}
-
-game.prototype.addListener = function (listener, event) {
-    if (event === 'swap') {
-    this.swapObservers.push(listener);
-    }
-    if(event === 'win') {
-    this.winObservers.push(listener);
-    }
-    if(event === 'lose') {
-    this.loseObservers.push(listener);
-    }
-};
-
-game.prototype.update = (event) => {
-    if (event === 'swap') {
-        this.swapObservers.forEach((l) => {
-            l(this)
-        })
-    }
-    if(event === 'win') {
-        this.winObservers.forEach((l) => {
-            l(this)
-        });
-    }
-    if(event === 'lose') {
-        this.loseObservers.forEach((l) => {
-            l(this)
-        });
-    }
-};
-
+game.prototype.getScore = function() {return this.score;}
 
 game.prototype.makeHTMLBoard = function(board) {
     let string = board.boardArry.reduce(function(accumulator, currentValue, index) {

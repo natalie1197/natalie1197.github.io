@@ -44,6 +44,15 @@ export const animateY = function(div, div2, px, px2, game1, event) {
     }
 }
 
+export const setpoints = function(game1) {
+    let points = game1.board.pointCollector();
+    let score = game1.getScore();
+    let toAdd = (points - score);
+    game1.score = (game1.getScore() + toAdd)
+    $(`.scoreHolder`).empty();
+    $(`.scoreHolder`).append(game1.score);
+}
+
 
 
 
@@ -60,7 +69,6 @@ $(async function() {
     await game1.setQuote();
 
    let text = game1.quote;
-   console.log(text);
 
     $('.quote-Holder').append(`<blockquote>Random Joke:"${text}"</blockquote>`)
 
@@ -74,11 +82,13 @@ $(async function() {
         
     });
 
-    $('.reset').on('click', async function() {
+    $('.newBoard').on('click', async function() {
+        selectedElement = null;
         $('.grid-container').empty()    
         game1 = new game();
         await game1.setImageArray();
         await game1.setQuote();
+        $(`.scoreHolder`).append(game1.score);
         $('.grid-container').append(game1.HTMLBoard);
         game1.imageArray.forEach(function(value, index) {
             $(`.pic${index+2}`).css("background-image", `url(${value})`);   
@@ -99,6 +109,19 @@ $(async function() {
             darkMode = true;
         }
         
+    })
+
+    $('.reset').on('click', function() {
+        selectedElement = null;
+        $('.grid-container').empty(); 
+        $(`.scoreHolder`).empty();
+        game1.setScore(0);
+        game1.board.setBoardArry(game1.boardArry);
+        $(`.scoreHolder`).append(game1.score);
+        $('.grid-container').append(game1.HTMLBoard);
+        game1.imageArray.forEach(function(value, index) {
+            $(`.pic${index+2}`).css("background-image", `url(${value})`);   
+        });  
     })
     
     
@@ -165,8 +188,9 @@ $(async function() {
                     $(`#${index}`).css("background-image", `url(${game1.imageArray[value-2]})`);
                 }
             })
-            }
-            clearTimeout(handler);
+        }
+        setpoints(game1);
+        clearTimeout(handler);
             }, 1400);
             
             return null;
@@ -174,17 +198,9 @@ $(async function() {
             selectedElement.classList.remove('isSelected');
             return null;
         }
+           
     }
     
- 
-
-
-   
-   // document.body.style.backgroundImage = `url(${img})`
-    //document.body.style.backgroundSize = 'cover'
-   
-
-
 
 
     

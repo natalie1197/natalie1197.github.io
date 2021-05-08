@@ -261,11 +261,12 @@ board.prototype.pointCollector = function() {
     let board = this.getBoardArry();
     board = board.reduce(function(accumulator, currentValue) {
         if (currentValue === 0) {
-            return accumulator++;
-        } else {
+            return accumulator += 1;
+        } else{
             return accumulator;
         }
-    })
+    }, 0);
+    return board;
 }
 
 board.prototype.pushDownBoard = function() {
@@ -278,7 +279,6 @@ board.prototype.validMove = function(x,y) {
     let initial = x;
     let destination = y;
     let valid = [(parseInt(initial)-6), (parseInt(initial)-1), (parseInt(initial)+1), (parseInt(initial)+6)];
-    console.log(valid);
     if(valid.includes(parseInt(destination))) {
         return true;
     } else {

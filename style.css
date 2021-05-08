@@ -54,8 +54,8 @@ button {
 }
 
 button.lightMode {
-    height: 90px;
-    width: 200px;
+    height: 10%;
+    width: 20%;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: medium;
@@ -63,8 +63,7 @@ button.lightMode {
     color: rgb(122, 122, 122);
     background-color: rgb(164, 211, 255);
     box-shadow: 5px 5px 2px rgb(109, 148, 221);
-    border-radius: 30%;
-    padding: 30px;    
+    border-radius: 30%;   
     margin: auto;
 
 }
@@ -76,6 +75,15 @@ button.lightMode {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
     font-size: xx-large;
+}
+
+.scoreHeader, .scoreHolder {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: bold;
+  font-size: x-large;
+
 }
 
 
