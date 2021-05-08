@@ -1,0 +1,153 @@
+@keyframes sparkle {
+    0%   { box-shadow:  4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgb(255, 255, 255);}
+    25%  { box-shadow: 0 8px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgb(128, 128, 128);}
+    50%  { box-shadow: 0 8px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgb(199, 197, 197);}
+    100% { box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgb(255, 255, 255);}
+}
+body {
+    background-image: url(https://i.pinimg.com/originals/23/3a/d8/233ad8233ab0fa8157b72898e8732a24.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    margin: auto;
+}
+
+body.lightMode {
+    background-image: url(https://vistapointe.net/images/sky-8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1000%;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin: auto;
+    text-shadow: 10px 10px 6px rgb(30, 10, 121) ;
+}
+
+div {
+    text-align: center;
+    align-self: center;
+    place-self: center;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 2px indigo;
+    border-radius: 30%;    
+    margin: auto;
+}
+
+button.lightMode {
+    height: 90px;
+    width: 200px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(122, 122, 122);
+    background-color: rgb(164, 211, 255);
+    box-shadow: 5px 5px 2px rgb(109, 148, 221);
+    border-radius: 30%;
+    padding: 30px;    
+    margin: auto;
+
+}
+
+
+.quote-Holder {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: xx-large;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-image: url(https://www.ruag.com/sites/default/files/styles/stage_home_large/public/2020-06/Galileo%20till%20vibrationsrummen_K%C3%A4lla%20ESA.jpg?itok=m62EkRze);
+    border: 30px solid rgb(0, 0, 0);
+    grid-gap: 8px;
+    height: 700px;
+    width: 700px;
+    align-self: center;
+    place-self: center;
+    margin: auto;
+    padding: 30px;
+  }
+
+  .grid-container.lightMode {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-image: url(http://www.technocrazed.com/wp-content/uploads/2015/08/NASA-releases-stunning-photographs-of-Earth-From-Space2.jpg);
+    border: 30px solid rgb(146, 170, 219);
+    grid-gap: 8px;
+    height: 700px;
+    width: 700px;
+    align-self: center;
+    place-self: center;
+    margin: auto;
+    padding: 30px;
+  }
+
+.grid-item {
+    border: none;
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgb(255, 255, 255);
+    align-self: center;
+    place-self: center;
+    animation: sparkle 4s;
+    animation-iteration-count: infinite;
+
+  }
+
+  .grid-item-empty {
+      background-image: none;
+      border: none;
+      padding: 20px;
+      align-self: center;
+      place-self: center;
+  }
+
+  .tempRemove {
+    border: none;
+    background-image: none;
+  }
+
+  .clickable:hover {
+    opacity: 50%;
+  }
+
+  .isSelected {
+    opacity: 50%;
+    
+  }
+
+  button:hover {
+      opacity: 50%;
+  }
