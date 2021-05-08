@@ -57,11 +57,11 @@ $(async function() {
     let game1 =  new game()
     let selectedElement = null;
     await game1.setImageArray();
-    await game1.setQuote();
+   // await game1.setQuote();
 
-    let text = game1.quote.quote;
+   // let text = game1.quote.quote;
 
-    $('.quote-Holder').append(`<blockquote>"${text}"<br>~${game1.quote.author}</blockquote>`)
+    //$('.quote-Holder').append(`<blockquote>"${text}"<br>~${game1.quote.author}</blockquote>`)
 
     $('.grid-container').append(game1.HTMLBoard);
     game1.imageArray.forEach(function(value, index) {
