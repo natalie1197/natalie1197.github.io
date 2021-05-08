@@ -23,6 +23,15 @@ export async function quoteApi() {
     return result;
 } 
 
+export async function yesOrNoApi() {
+    const result = await axios({
+        method: 'get',
+        url: 'https://yesno.wtf/#api',
+    }).then((result) => {return result.data});
+    return result;
+} 
+
+
 
 
 
