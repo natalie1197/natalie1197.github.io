@@ -75,7 +75,7 @@ button.lightMode {
     margin: auto;
 
 }
-
+ 
 
 .quote-Holder {
     text-align: center;
@@ -87,7 +87,7 @@ button.lightMode {
     text-shadow: 5px 5px 2px rgb(47, 48, 49); ;
 }
 
- .scoreHeader, .scoreHolder {
+ .catHolder, .scoreHeader, .scoreHolder {
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

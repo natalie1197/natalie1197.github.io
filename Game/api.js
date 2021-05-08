@@ -1,7 +1,6 @@
 
 let nasaKey = 'q0hdhsb5VNi5MGzCeADwrWwMsZWZRZULgOgbj292'
-let youtubeKey= 'AIzaSyBj6GEO54fjeUfg0guEW0kTz0ATacLjVyw'
-let pixLixeKey = 'pFeDdlMFmFXPULWKqLTtEiSugr82'
+
 export async function nasaAPOD() {
     const result = await axios({
         method: 'get',
@@ -26,10 +25,16 @@ export async function quoteApi() {
     return result;
 } 
 
-export async function yesOrNoApi() {
+export async function catApi() {
     const result = await axios({
         method: 'get',
-        url: 'https://yesno.wtf/#api/',
+        url: 'https://api.thecatapi.com/v1/images/search',
+        headers: {
+            'x-api-key': '0b7675ef-f27b-4d80-b1ff-7bffa0955a10'
+        },
+        parameters: {
+            limit:1,
+        }
     }).then((result) => {return result.data});
     return result;
 } 

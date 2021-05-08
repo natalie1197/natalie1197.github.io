@@ -1,6 +1,7 @@
 
 import { board } from './Game/boards.js';
-import {game} from './Game/game.js'
+import {game} from './Game/game.js';
+import {catApi} from './Game/api.js';
 
 export const animateX = function(div, div2, px, px2, game1, event) {
     let background = div.style.backgroundImage;
@@ -62,7 +63,7 @@ export const setpoints = function(game1) {
 
 
 $(async function() {
-    let darkMode = true;
+     let darkMode = true;
     let game1 =  new game()
     let selectedElement = null;
     await game1.setImageArray();
@@ -70,7 +71,16 @@ $(async function() {
 
    let text = game1.quote;
 
-    $('.quote-Holder').append(`<blockquote>Random Dad Joke: "${text}"</blockquote>`)
+    $('.catButton').on('click', async function() {
+        let cat = await catApi();
+        cat = cat[0].url;
+        $('.catHolder').empty();
+        $('.catHolder').append( `<img src="${cat}" alt="cat Image">`)
+
+    });
+
+
+    $('.quote-Holder').append(`<blockquote>Random Dad Joke: "${text}"</blockquote>`);
 
     $('.grid-container').append(game1.HTMLBoard);
     game1.imageArray.forEach(function(value, index) {
