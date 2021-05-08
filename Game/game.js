@@ -96,8 +96,8 @@ game.prototype.setImageArray = async function() {
 }
 
 game.prototype.setQuote = async function() {
-    let quote = await quoteApi()
-    this.quote = quote
+    let quote = await quoteApi();
+    this.quote = quote;
 
 }
 

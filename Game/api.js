@@ -18,7 +18,10 @@ export async function nasaAPOD() {
 export async function quoteApi() {
     const result = await axios({
         method: 'get',
-        url: 'http://quotes.stormconsultancy.co.uk/random.json',
+        url: "https://icanhazdadjoke.com/",
+        headers: {
+            'Accept': 'text/plain'
+        }
     }).then((result) => {return result.data});
     return result;
 } 
@@ -26,7 +29,7 @@ export async function quoteApi() {
 export async function yesOrNoApi() {
     const result = await axios({
         method: 'get',
-        url: 'https://yesno.wtf/#api',
+        url: 'https://yesno.wtf/#api/',
     }).then((result) => {return result.data});
     return result;
 } 
